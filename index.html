@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+    #indexContainer{
+        text-align: center;
+    }
+
+    #titulo{
+        fill:#0F4B9C;
+        font-size: 44pt;
+        font-weight: bold;
+        font-family:'Segoe UI';
+        text-shadow: 2px 2px 4px #8A784E;
+    }
+    #indexButton{
+        border-radius: 50%;
+        border: 5px solid #945D3C;
+        background-color:#945D3C;
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 15px 40px rgb(79, 32, 13, 0.2);
+        cursor: pointer;
+        transform: transform 0.3s;
+    }
+    #indexButton:hover{
+        transform: scale(1.2);
+    }
+    
+    </style>  
+</head>  
+<body>
+    <div id="indexContainer">
+        <svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+        <!-- Curva invisible que seguirá el texto principal -->
+        <path id="curvaTitulo" d="M10,150 C180,5 370,210 470,10" fill="transparent" stroke="transparent"/>
+        <!-- Texto siguiendo la curva -->
+        <text id="titulo">
+            <textPath href="#curvaTitulo" startOffset="50%" text-anchor="middle">
+                To-Do List
+            </textPath>
+        </text>
+        </svg>
+        <button id="indexButton">
+            <span class="material-symbols-outlined" style="font-size: 54pt; color: aliceblue;">
+                arrow_right
+            </span>
+        </button>
+    </div>
+
+</body>
+</html>
