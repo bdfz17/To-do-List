@@ -7,15 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
-    #indexContainer{
-        text-align: center;
-    }
-
     #titulo{
         fill:#0F4B9C;
         font-size: 44pt;
         font-weight: bold;
-        font-family:'Segoe UI';
         text-shadow: 2px 2px 4px #8A784E;
     }
     #indexButton{
@@ -30,12 +25,14 @@
     }
     #indexButton:hover{
         transform: scale(1.2);
+        background-color: #a87657;
+        border: 5px solid #a87657;
     }
     
     </style>  
 </head>  
 <body>
-    <div id="indexContainer">
+    <div class="contenedor">
         <svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
         <!-- Curva invisible que seguirá el texto principal -->
         <path id="curvaTitulo" d="M10,150 C180,5 370,210 470,10" fill="transparent" stroke="transparent"/>
@@ -46,12 +43,16 @@
             </textPath>
         </text>
         </svg>
-        <button id="indexButton">
+        <button id="indexButton" onclick="cambiarPestaña()">
             <span class="material-symbols-outlined" style="font-size: 54pt; color: aliceblue;">
                 arrow_right
             </span>
         </button>
     </div>
-
+    <script type="text/javascript">
+        function cambiarPestaña(){
+            window.location.href="listado.html";
+        }
+    </script>
 </body>
 </html>

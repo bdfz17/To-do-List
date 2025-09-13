@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contenedor{
+            display: flex;
+            gap:50px;
+        }
+
+        #titleListado{
+            color:#0F4B9C;
+            font-size: 44pt;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #8A784E;
+        }
+
+        .listado{
+            text-align: left;
+            width: 70%;
+        }
+
+        .pestaña{
+            padding: 10px;
+            text-decoration: none;
+            color:aliceblue;
+            font-weight: bold;
+            font-size: 18pt;
+        }
+
+        .pestaña:hover {
+            background: #a87657;
+            border: 3px solid #a87657;
+            cursor:pointer;
+        }
+
+        #contenido {
+            border: 3px solid #a87657;
+            margin-top: 10px;
+            padding: 10px;
+            background: #a87657;
+        }
+
+        .normal {
+            background-color: #945D3C;
+            border: 3px solid #945D3C;
+        }
+
+        .seleccionada{
+            border: 3px solid #a87657;
+            background-color: #a87657;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titleListado">Tareas</h1>
+    <div class="contenedor">
+        <div class="listado">
+            <div class="pestañas">
+                <a class="pestaña seleccionada">Personal</a>
+            </div>
+            <div id="contenido">
+                <!--El contenido cambia según la pestaña seleccionada-->
+            </div>
+        </div>
+        <aside>
+            <button class="botonListado">
+                Agregar categoría
+            </button>
+            <button class="botonListado">
+                Agregar tarea
+            </button>
+        </aside>
+    </div>
+    <script type="text/javascript">
+
+    </script>
+    
+
+</body>
+</html>
