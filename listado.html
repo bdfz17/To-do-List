@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>To-Do List</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
         .contenedor{
             display: flex;
@@ -53,29 +54,105 @@
             border: 3px solid #a87657;
             background-color: #a87657;
         }
+
+        .botonListado{
+            margin: 20px;
+            padding:15px;
+            width: 200px;
+            height:fit-content;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: #0F4B9C;
+            border-radius: 30px;
+            color:aliceblue;
+            border:none;
+            font-weight: bold;
+        }
+
+        .botonListado:hover{
+            background-color: #58A3A6;
+            cursor:pointer;
+        }
     </style>
 </head>
 <body>
     <h1 id="titleListado">Tareas</h1>
     <div class="contenedor">
         <div class="listado">
-            <div class="pestañas">
+            <div id="pestañas">
                 <a class="pestaña seleccionada">Personal</a>
             </div>
             <div id="contenido">
                 <!--El contenido cambia según la pestaña seleccionada-->
             </div>
         </div>
+        <dialog id="modal_categoria" class="modal">
+            <div>
+                <span style="float:right;color:aliceblue; background-color: rgb(219, 57, 57); cursor:pointer" 
+                class="material-symbols-outlined" onclick="cerrarCategoria()">
+                    close </span>
+                <h3 class="title_modal">Nueva Categoría</h3>
+            </div>
+            <label for="nombre_categoria">Nombre:</label>
+            <input type="text" id="nombre_categoria" name="nombre_categoria" cl><br>
+            <button class="btn_guardar">Guardar</button>
+        </dialog>
         <aside>
-            <button class="botonListado">
-                Agregar categoría
+            <button class="botonListado" onclick="mostrarCategoria()">
+                <span class="material-symbols-outlined">
+                    add_circle
+                </span>
+                Agregar Categoría
             </button>
             <button class="botonListado">
-                Agregar tarea
+                <span class="material-symbols-outlined">
+                    add_circle
+                </span>
+                Agregar Tarea
             </button>
         </aside>
     </div>
     <script type="text/javascript">
+        /*logica de pestañas*/
+        /*
+        let pestañas=document.querySelectorAll("#pestañas a"); //retorna un arreglo de objetos
+        for(let i=0;i<pestañas.length;i++){
+            pestañas[i].addEventListener("click", ()=>cambiarPestaña(pestañas[i]))
+        }
+        //para llamar una funcion con nombre y parametros usando AddEvList se puede usar una funcion anonima o arrow function 
+        let objContenido={uno:"Contenido de pestaña 1",dos:"Contenido de pestaña 2",tres:"Contenido de pestaña 3",cuatro:"Contenido de pestaña 4",cinco:"Contenido de pestaña 5"}
+        function cambiarPestaña(nodo){
+            //obtener los elementos a manipular
+            let nodoContenido= document.getElementById("contenido"); //retorna un objeto
+            //manipular los elementos
+            let idEnlace= nodo.id;
+            nodoContenido.innerText=objContenido[idEnlace];//se pone en corchetes ya que no tengo el dato fijo
+            //nodo.style.border="1px solid black";
+            //nodo.style.backgroundColor="blue";
+
+            //limpiar los enlaces, quitar a todos los enlaces la clase seleccionado
+            let enlaces=document.getElementsByClassName("tit"); //retorna un arreglo de objetos
+            
+            for(let i=0;i<enlaces.length;i++){
+                enlaces[i].classList.remove("seleccionado");
+            }
+            
+
+            //classList representa a las listas de clase que pertenece, se puede añadir o quitar
+            nodo.classList.add("seleccionado");
+        }
+        */
+
+        function mostrarCategoria(){
+            const modal_categoria = document.querySelector("#modal_categoria");
+            modal_categoria.showModal();
+        }
+
+        function cerrarCategoria(){
+            const modal_categoria = document.querySelector("#modal_categoria");
+            modal_categoria.close();
+        }
 
     </script>
     
