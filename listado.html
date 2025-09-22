@@ -30,6 +30,8 @@
             color:aliceblue;
             font-weight: bold;
             font-size: 18pt;
+            background-color: #945D3C;
+            border: 3px solid #945D3C;
         }
 
         .pestaña:hover {
@@ -43,11 +45,6 @@
             margin-top: 10px;
             padding: 10px;
             background: #a87657;
-        }
-
-        .normal {
-            background-color: #945D3C;
-            border: 3px solid #945D3C;
         }
 
         .seleccionada{
@@ -81,22 +78,22 @@
     <div class="contenedor">
         <div class="listado">
             <div id="pestañas">
-                <a class="pestaña seleccionada">Personal</a>
+                <a class="pestaña">Personal</a>
             </div>
             <div id="contenido">
+                <span style="float: right; cursor:pointer; color:aliceblue" onclick="eliminarCategoria()"
+                class="material-symbols-outlined">
+                    close
+                </span>
                 <!--El contenido cambia según la pestaña seleccionada-->
             </div>
         </div>
         <dialog id="modal_categoria" class="modal">
-            <div>
-                <span style="float:right;color:aliceblue; background-color: rgb(219, 57, 57); cursor:pointer" 
-                class="material-symbols-outlined" onclick="cerrarCategoria()">
-                    close </span>
-                <h3 class="title_modal">Nueva Categoría</h3>
-            </div>
-            <label for="nombre_categoria">Nombre:</label>
+            <h3 class="title_modal">Nueva Categoría</h3>
+            <label for="nombre_categoria" style="font-weight: bold;">Nombre</label>
             <input type="text" id="nombre_categoria" name="nombre_categoria" cl><br>
-            <button class="btn_guardar">Guardar</button>
+            <button class="btnCancelar" onclick="cerrarCategoria()">Cancelar</button>
+            <button class="btnGuardar" onclick="guardarCategoria()">Guardar</button>
         </dialog>
         <aside>
             <button class="botonListado" onclick="mostrarCategoria()">
@@ -113,49 +110,6 @@
             </button>
         </aside>
     </div>
-    <script type="text/javascript">
-        /*logica de pestañas*/
-        /*
-        let pestañas=document.querySelectorAll("#pestañas a"); //retorna un arreglo de objetos
-        for(let i=0;i<pestañas.length;i++){
-            pestañas[i].addEventListener("click", ()=>cambiarPestaña(pestañas[i]))
-        }
-        //para llamar una funcion con nombre y parametros usando AddEvList se puede usar una funcion anonima o arrow function 
-        let objContenido={uno:"Contenido de pestaña 1",dos:"Contenido de pestaña 2",tres:"Contenido de pestaña 3",cuatro:"Contenido de pestaña 4",cinco:"Contenido de pestaña 5"}
-        function cambiarPestaña(nodo){
-            //obtener los elementos a manipular
-            let nodoContenido= document.getElementById("contenido"); //retorna un objeto
-            //manipular los elementos
-            let idEnlace= nodo.id;
-            nodoContenido.innerText=objContenido[idEnlace];//se pone en corchetes ya que no tengo el dato fijo
-            //nodo.style.border="1px solid black";
-            //nodo.style.backgroundColor="blue";
-
-            //limpiar los enlaces, quitar a todos los enlaces la clase seleccionado
-            let enlaces=document.getElementsByClassName("tit"); //retorna un arreglo de objetos
-            
-            for(let i=0;i<enlaces.length;i++){
-                enlaces[i].classList.remove("seleccionado");
-            }
-            
-
-            //classList representa a las listas de clase que pertenece, se puede añadir o quitar
-            nodo.classList.add("seleccionado");
-        }
-        */
-
-        function mostrarCategoria(){
-            const modal_categoria = document.querySelector("#modal_categoria");
-            modal_categoria.showModal();
-        }
-
-        function cerrarCategoria(){
-            const modal_categoria = document.querySelector("#modal_categoria");
-            modal_categoria.close();
-        }
-
-    </script>
-    
-
+    <script type="text/javascript" src="js/logicaDeListado.js"></script>
 </body>
 </html>
